@@ -1,24 +1,62 @@
-# README
+# アプリケーション名
+本のSNS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+本好きの人が本を紹介したり、おすすめの本を提案したりするアプリ
 
-Things you may want to cover:
+# URL
 
-* Ruby version
+# テスト用アカウント
+* メールアドレス :
+* パスワード
 
-* System dependencies
+# 利用方法
+## ユーザー登録
 
-* Configuration
+## 本の投稿
 
-* Database creation
+## 本を探す
 
-* Database initialization
+## 書籍の購入
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+# アプリケーションを作成したはいけ
 
-* Deployment instructions
+# 実装した機能についての画像やGIFおよびその説明
 
-* ...
+# 実装予定の機能
+
+# データベース設計
+
+# 画面遷移図
+
+# 開発環境
+
+# ローカルでの動作確認
+
+# 工夫したポイント
+
+# 改善点
+
+# 製作時間
+
+## users
+| Column             | Type      | Options                   |
+| ------------------ | --------- | ------------------------- |
+| nickname           | string    | null: false               |
+| email              | string    | null: false, unique: true |
+| encrypted_password | string    | null: false               |
+### Association
+- has_many :books
+
+## books
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| title     | string     | null: false                    |
+| author    | string     | null: false                    |
+| publisher | string     | null: false                    |
+| content   | text       | null: false                    |
+| genre_id  | integer    | null: false                    |
+| user      | references | null: false, foreign_key: true |
+### Association
+- belongs_to :user
