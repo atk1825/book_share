@@ -1,0 +1,26 @@
+<h1>投稿</h1>
+<%= form_with model: @book, local: true do |f| %>
+  <div>
+    <%= f.label :本の表紙 %>
+    <%= f.file_field :image %>
+  </div>
+  <div>
+    <%= f.label :タイトル %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :著者 %>
+    <%= f.text_field :author %>
+  </div>
+  <div>
+    <%= f.label :出版社 %>
+    <%= f.text_field :publisher %>
+  </div>
+  <div>
+    <%= f.label :概要 %>
+    <%= f.text_area :overview %>
+  </div>
+  <div>
+    <%= f.submit '投稿' %>
+  </div>
+<% end %>
