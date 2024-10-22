@@ -1,0 +1,19 @@
+<div class="book-detail">
+  <div class="left-half">
+    <% if @book.image.attached? %>
+      <%= image_tag @book.image, class: 'book-image' %>
+    <% else %>
+      <p>No image available</p>
+    <% end %>
+  </div>
+  <div class="right-half">
+    <h1>
+      <%= @book.title %>
+      <span class="like-button">
+      </span>
+    </h1>
+    <p><strong>作者:</strong> <%= @book.author %></p>
+    <p><strong>出版社:</strong> <%= @book.publisher %></p>
+    <p><strong>概要:</strong> <%= @book.overview %></p>
+  </div>
+</div>
