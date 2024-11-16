@@ -1,5 +1,11 @@
 .book-image{
   width: 150px;
-  height: 150px;
+  height: 100%;
+}
+
+.book-image-mypage{
+  width: 150px;
+  height: 300px;
 }
 /* 上記は仮 */
+

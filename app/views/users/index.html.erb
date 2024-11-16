@@ -1,0 +1,6 @@
+<%= current_user.nickname %><br>
+<% @books.each do |book| %>
+  <%= image_tag book.image, class: 'book-image-mypage' %>
+  <%= book.title %>
+<% end %>
+<%= current_user.books.count %><br>

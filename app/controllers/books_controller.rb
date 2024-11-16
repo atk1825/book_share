@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: %i[new create]
   def index
     @books = Book.all
   end
@@ -24,6 +24,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :publisher, :overview, :image)
+    params.require(:book).permit(:title, :author, :publisher, :overview, :image).merge(user_id: current_user.id)
   end
 end
