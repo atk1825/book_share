@@ -11,9 +11,6 @@
   <div class="right-half">
     <h1>
       <%= @book.title %>
-      <span class="like-button">
-        <%= link_to "\u2605", like_book_path(@book), method: :post, remote: true, class: 'like-button' %>
-      </span>
     </h1>
     <p><strong>Author:</strong> <%= @book.author %></p>
     <p><strong>Publisher:</strong> <%= @book.publisher %></p>
