@@ -1,19 +1,22 @@
 <div class="book-detail">
   <div class="left-half">
-    <% if @book.image.attached? %>
-      <%= image_tag @book.image, class: 'book-image' %>
-    <% else %>
-      <p>No image available</p>
-    <% end %>
+    <div class="image-wrapper">
+      <% if @book.image.attached? %>
+        <%= image_tag @book.image.variant(resize_to_fit: [150, 225]), class: 'book-image' %>
+      <% else %>
+        <p>No image available</p>
+      <% end %>
+    </div>
   </div>
   <div class="right-half">
     <h1>
       <%= @book.title %>
       <span class="like-button">
+        <%= link_to "\u2605", like_book_path(@book), method: :post, remote: true, class: 'like-button' %>
       </span>
     </h1>
-    <p><strong>作者:</strong> <%= @book.author %></p>
-    <p><strong>出版社:</strong> <%= @book.publisher %></p>
-    <p><strong>概要:</strong> <%= @book.overview %></p>
+    <p><strong>Author:</strong> <%= @book.author %></p>
+    <p><strong>Publisher:</strong> <%= @book.publisher %></p>
+    <p><strong>Overview:</strong> <%= @book.overview %></p>
   </div>
 </div>
